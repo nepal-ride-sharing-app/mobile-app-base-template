@@ -32,6 +32,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.26.3",
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
@@ -63,7 +64,6 @@
     "react-native-webview": "13.12.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
     "@tsconfig/react-native": "^3.0.5",
     "@types/jest": "^29.5.14",
     "@types/react": "~18.3.12",
