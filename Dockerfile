@@ -9,55 +9,39 @@ RUN npm install
 
 # Copy all other content except node_modules
 COPY . .
+
+# Set environment variables
+ENV EXPO_NO_INTERACTIVE=true
+
 EXPOSE 8081
 
 # Platform = ios 
-# local Stage
-FROM base as local-ios
-CMD ["npm", "run", "start:local:ios"]
-
 # dev Stage
-FROM base as dev-ios
+FROM base as developmnet-ios
 CMD ["npm", "run", "start:dev:ios"]
 
 # preprod Stage
-FROM base as preprod-ios
-CMD ["npm", "run", "start:preprod:ios"]
+FROM base as test-ios
+CMD ["npm", "run", "start:test:ios"]
 
 # prod Stage
-FROM base as prod-ios
+FROM base as production-ios
 CMD ["npm", "run", "start:prod:ios"]
 
 # Platform = android
-# local Stage
-FROM base as local-android
-CMD ["npm", "run", "start:local:android"]
-
 # dev Stage
-FROM base as dev-android
+FROM base as developmnet-android
 CMD ["npm", "run", "start:dev:android"]
 
 # preprod Stage
-FROM base as preprod-android
-CMD ["npm", "run", "start:preprod:android"]
+FROM base as test-android
+CMD ["npm", "run", "start:test:android"]
 
 # prod Stage
-FROM base as prod-android
+FROM base as production-android
 CMD ["npm", "run", "start:prod:android"]
 
 # Platform = web
-# local Stage
-FROM base as local-web
-CMD ["npm", "run", "start:local:web"]
-
 # dev Stage
-FROM base as dev-web
+FROM base as developmnet-web
 CMD ["npm", "run", "start:dev:web"]
-
-# preprod Stage
-FROM base as preprod-web
-CMD ["npm", "run", "start:preprod:web"]
-
-# prod Stage
-FROM base as prod-web
-CMD ["npm", "run", "start:prod:web"]
